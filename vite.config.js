@@ -10,5 +10,7 @@ export default defineConfig({
       autoImport: true,
     }),
   ],
-  base: '/rebirth/',
+  base: process.env.NODE_ENV === 'production'
+    ? '/rebirth/'
+    : '/',
 })
