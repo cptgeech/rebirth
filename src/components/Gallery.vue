@@ -66,6 +66,8 @@ const showRight = ref(true);
 const dialog = ref(false);
 const selectedPoster = ref(null);
 
+const resizeHandler = () => carousels.value.forEach(checkScroll);
+
 const scrollCarousel = (carousel, direction) => {
   carousel?.scrollBy({
     left: direction * 400,
@@ -89,7 +91,7 @@ const carousels = ref([
       { title: '[re]birth x project vertigo', url:'https://cdn.discordapp.com/attachments/1379191138677948416/1386103319109570611/RebirthJune21stEDIT.png?ex=6a69cf0f&is=6a687d8f&hm=c36cf847dd1b8dcfe3d90641773c696be6ec29a66c39e96f8ac6abdf61e46198&' },
       { title: '[re]birth x offline', url:'https://cdn.discordapp.com/attachments/1379191138677948416/1389018841887281375/BirthMeOfflineBabyGrillPostjune28.png?ex=6a69de5a&is=6a688cda&hm=008692a56bb6ee5c1222e09196ad51ec44442dcebda1d68380454bd21cc7997d&' },
       { title: '[re]birth x connection', url:'https://cdn.discordapp.com/attachments/1379191138677948416/1399968348414148698/RebirthConnectionFun.png?ex=6a6a26e0&is=6a68d560&hm=8e7d35c590c5dcf03073a8cfbcd90e848951765bb8d6a9d30d3f7428164ca068&' },
-      { title: 'minti birthday (2025-07-14)', url:'https://cdn.discordapp.com/attachments/1379191138677948416/1399968820822675596/REBIRTHJULY19.png?ex=6a6a2751&is=6a68d5d1&hm=7611394916682b794ab68c25029ddc2ae161938e6c6a9b6794438c9691ed940e&' },
+      { title: 'minti birthday (2025-07-19)', url:'https://cdn.discordapp.com/attachments/1379191138677948416/1399968820822675596/REBIRTHJULY19.png?ex=6a6a2751&is=6a68d5d1&hm=7611394916682b794ab68c25029ddc2ae161938e6c6a9b6794438c9691ed940e&' },
       { title: '[re]birth', url:'https://cdn.discordapp.com/attachments/1379191138677948416/1399968861876391956/RebirthAug2edit.png?ex=6a6a275a&is=6a68d5da&hm=581c72faf2572db44a650150e05ee533428699d19b9a9e51bd4e249befa29b7a&' },
       { title: '[re]birth', url:'https://cdn.discordapp.com/attachments/1379191138677948416/1412859701028196616/RebirthAugust16thedit.png?ex=6a6996e2&is=6a684562&hm=4cf73ff79cbd86e2c02d9eb17d9e2b93ba104d4832bfd1c4724c559eff1f8fd6&' },
       { title: '[re]birth', url:'https://cdn.discordapp.com/attachments/1379191138677948416/1412859744259145749/RebirthAug30edit.png?ex=6a6996ec&is=6a68456c&hm=294fc2c955d248945364eb9771ed31670824ccbd4a074a61763fd36b179f9d50&' },
@@ -143,7 +145,7 @@ const carousels = ref([
     posters: [
       { title: '[re]birth test run', url: 'https://cdn.discordapp.com/attachments/1379191138677948416/1379191479247048814/draft_3_alt_4.png?ex=6a69b668&is=6a6864e8&hm=ca4587fd5e2ce3b0a079b8515d5be842eeb3be489c8743025435f44d1a1ca861&' },
       { title: '[re]birth', url: 'https://cdn.discordapp.com/attachments/1379191138677948416/1379191717424533635/MARCH1.png?ex=6a69b6a1&is=6a686521&hm=015c6a88b79586f549427bb8c7c9d3455740877af9078b3a398b3d9070770b6e&' },
-      { title: 'disco night', url: 'https://cdn.discordapp.com/attachments/1379191138677948416/1499876821309591573/image.png?ex=6a69bfe4&is=6a686e64&hm=397657397ba58f4d8a160c8655272d4e11d6b73ddb7cdeff0f42171fd75a438a&' }
+      { title: 'disco night (2026-04-11)', url: 'https://cdn.discordapp.com/attachments/1379191138677948416/1499876821309591573/image.png?ex=6a69bfe4&is=6a686e64&hm=397657397ba58f4d8a160c8655272d4e11d6b73ddb7cdeff0f42171fd75a438a&' }
     ],
     element: null,
     showLeft: false,
@@ -163,7 +165,7 @@ const carousels = ref([
   {
     artist: 'geech',
     posters: [
-      { title: 'minti birthday (2025-07-14)', url: 'https://cdn.discordapp.com/attachments/1379191138677948416/1399968743894945833/FINAL_MINTI_BIRTHDAY_TRAILER_60_FPS.mp4?ex=6a6a273e&is=6a68d5be&hm=a9f71281d4cefc1ac0002ad52a80440f8aecff9230382787221e5ea0ab60c1d7&' },
+      { title: 'minti birthday (2025-07-19)', url: 'https://cdn.discordapp.com/attachments/1379191138677948416/1399968743894945833/FINAL_MINTI_BIRTHDAY_TRAILER_60_FPS.mp4?ex=6a6a273e&is=6a68d5be&hm=a9f71281d4cefc1ac0002ad52a80440f8aecff9230382787221e5ea0ab60c1d7&' },
       { title: 'kojo birthday', url: 'https://cdn.discordapp.com/attachments/1379191138677948416/1483592040020447414/image.png?ex=6a69d502&is=6a688382&hm=92159ed18c045f757421974b7996fbeeab3248ee3ccabae36573218878e6c98c&' },
       { title: '[re]birth', url: 'https://cdn.discordapp.com/attachments/1379191138677948416/1499876770139340850/FINAL_REBIRTH_MARCH_28.png?ex=6a69bfd8&is=6a686e58&hm=c48782ef77ad279f6630598eb2426098becf1ec80d68aa7451088185488f476a&' },
       { title: 'kiwiii birthday', url: 'https://cdn.discordapp.com/attachments/1379191138677948416/1499877052722057357/kiwiii_bday_poster_FINAL.png?ex=6a69c01b&is=6a686e9b&hm=06fa887964ef073c2924b35f21209f87b9b70622b51babb8469b5a0cab6dd9fa&' }
@@ -179,13 +181,11 @@ onMounted(() => {
     router.push('/');
   }
 
-  window.addEventListener('resize', () => {
-    carousels.value.forEach(checkScroll);
-  });
+  window.addEventListener('resize', resizeHandler);
 });
 
 onUnmounted(() => {
-  window.removeEventListener('resize', checkAllCarousels);
+  window.removeEventListener('resize', resizeHandler);
 });
 </script>
 
