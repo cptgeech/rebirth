@@ -2,7 +2,7 @@
   <v-container class="video-wrapper">
     <video
       ref="video"
-      src="/fade_out.mp4"
+      src="https://cdn.discordapp.com/attachments/792812322144911370/1531749934477606912/final.mp4?ex=6a6a58ca&is=6a69074a&hm=5fc54cf6aa894872ee2a3105b4f7aad2310ef8d675ea55b66bbb9602b7ea3fa6&"
       class="fullscreen"
       muted
       autoplay

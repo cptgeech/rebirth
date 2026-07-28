@@ -11,7 +11,7 @@
           playsinline
           disablePictureInPicture
         >
-          <source src="/site.mp4" type="video/mp4" />
+          <source src="https://cdn.discordapp.com/attachments/792812322144911370/1531750357238284519/site.mp4?ex=6a6a592f&is=6a6907af&hm=5c47a6c87a3f824012de38c8b891d56cd5af9cc7a39d826861292da2517e8945&" type="video/mp4" />
         </video>
 
         <div class="video-overlay"></div>
@@ -50,7 +50,6 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import Navbar from './Navbar.vue';
 
 const animate = ref(false);
 
@@ -69,13 +68,6 @@ onMounted(() => {
   min-width: 100%;
   overflow-y: auto;
   background: #000;
-}
-
-.navbar {
-  position:fixed;
-  width:100%;
-  height:82px;
-  z-index: 3;
 }
 
 /* could make the cards 30% if 33% makes location of embrace,, submerge,, too low */
