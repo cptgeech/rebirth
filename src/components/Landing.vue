@@ -30,7 +30,7 @@ const router = useRouter();
 
 onMounted(() => {
   if(localStorage.getItem('submerged') === 'true') {
-    //router.push('/home');
+    router.push('/home');
   }
 })
 
@@ -51,7 +51,6 @@ const enter = () => {
 }
 
 const goHome = () => {
-  localStorage.setItem('submerged', 'true');
   router.push('/home');
 }
 </script>

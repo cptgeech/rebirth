@@ -1,47 +1,45 @@
 <template>
-  <div class="page pt-3">
+  <div class="page">
+    <Navbar class="navbar second-dissolve-in px-3" />
     <div class="main-wrapper">
-      <div class="card">
-        <video
-          class="video-background px-3"
-          :class="{ 'second-dissolve-in': animate }"
-          autoplay
-          muted
-          loop
-          playsinline
-          disablePictureInPicture
-        >
-          <source src="/site_vid.mp4" type="video/mp4" />
-        </video>
-
-        <div class="video-overlay"></div>
-      
-        <div class="text-content no-select">
-          <p style="animation-delay: 1s;" class="text-dissolve-in">
-            embrace,,
-          </p>
-          <p style="animation-delay: 3s;" class="pt-3 text-dissolve-in">
-            submerge,,
-          </p>
+      <div class="card second-dissolve-in pt-3 px-3">
+        <div class="video-background">
+          <video autoplay muted loop playsinline :disablePictureInPicture="true">
+            <source src="/new_site_vid.mp4" type="video/mp4" />
+          </video>
+          <!--<p class="video-text" style="font-family:'Neuropolitical', sans-serif;color:rgba(255, 255, 255, 0.9);font-size:30px;">[re]birth</p>-->
         </div>
       </div>
-      <!--<div class="card">
+      <div class="px-3 py-3 second-dissolve-in">
+        <v-divider></v-divider>
+      </div>
+      <div class="card">
         <div class="text-background second-dissolve-in"></div>
         <div class="text-content no-select">
           <p style="animation-delay:1s;" class="text-dissolve-in">embrace,,</p>
           <p style="animation-delay:3s;" class="pt-3 text-dissolve-in">submerge,,</p>
         </div>
-      </div>-->
-      <div class="px-3 py-3" :class="{ 'second-dissolve-in': animate }">
+      </div>
+      <div class="px-3 py-3 second-dissolve-in">
         <v-divider></v-divider>
       </div>
-      <div class="join-card px-3" :class="{ 'second-dissolve-in': animate }">
-        <div class="text-background" :class="{ 'second-dissolve-in': animate }"></div>
+      <div class="card second-dissolve-in px-3">
+        <div class="video-background">
+          <video autoplay muted loop playsinline :disablePictureInPicture="true">
+            <source src="/rebirth_empty_venue.mp4" type="video/mp4" />
+          </video>
+          <!--<p class="video-text" style="font-family:'Neuropolitical', sans-serif;color:rgba(255, 255, 255, 0.9);font-size:30px;">[re]birth</p>-->
+        </div>
+      </div>
+      <div class="px-3 py-3 second-dissolve-in">
+        <v-divider></v-divider>
+      </div>
+      <div class="join-card second-dissolve-in px-3">
+        <div class="repeating-rebirth-background second-dissolve-in"></div>
         <p style="z-index: 4;" class="pt-3 no-select">join the cause,,</p>
-        <div class="d-flex ga-2 no-select">
+        <div class="d-flex ga-2">
           <a class="mt-5 icon" style="width:35px;height:35px;" href="https://discord.gg/V3bmdXs2fk" target="_blank"><v-img style="width:35px;height:35px;" src="/Discord-Symbol-White.png"></v-img></a>
           <a class="mt-5 icon" style="width:35px;height:35px;" href="https://bsky.app/profile/minti.zip" target="_blank"><v-img style="width:35px;height:35px;" src="/bluesky-white-icon.png"></v-img></a>
-          <a class="mt-5 icon" style="width:35px;height:35px;" href="https://vrc.group/REBRTH.2629" target="_blank"><v-img style="width:35px;height:35px;" src="/vrc_icon.png"></v-img></a>
         </div>
       </div>
     </div>
@@ -49,18 +47,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
 import Navbar from './Navbar.vue';
-
-const animate = ref(false);
-
-onMounted(() => {
-  console.log(localStorage.getItem('submerged'));
-  if(!localStorage.getItem('submerged') && localStorage.getItem('submerged') !== 'true') {
-    animate.value = true;
-    localStorage.setItem('submerged', 'true');
-  }
-});
 
 </script>
 
@@ -84,7 +71,7 @@ onMounted(() => {
   position:relative;
   font-family: 'Fraktion', sans-serif;
   font-size: 30px;
-  height:85%;
+  height:33%;
   width:100%;
   display: flex;
   flex-direction:column;
@@ -108,42 +95,33 @@ onMounted(() => {
 }
 
 .main-wrapper {
+  padding-top: 75px;
   width:100%;
   height:100vh;
 }
 
 .video-background {
-  position: absolute;
-  inset: 0;
-
-  width: 100%;
+  position: relative;
   height: 100%;
-
-  object-fit: cover;
-  object-position: center;
-
-  z-index: 0;
+  min-width:100%;
+  overflow: hidden;
 }
 
-.video-overlay {
+.video-background video {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 1;
-  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .text-background {
   position: absolute;
   inset: 0;
 
-  background-image: url('/banner.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: url('/banner.jpg') center / cover no-repeat;
   background-attachment: fixed;
-
-  /* Horizontal, vertical */
-  background-position: center 400px;
 
   z-index: 0;
 }
