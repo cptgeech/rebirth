@@ -55,7 +55,6 @@ import Navbar from './Navbar.vue';
 const animate = ref(false);
 
 onMounted(() => {
-  console.log(localStorage.getItem('submerged'));
   if(!localStorage.getItem('submerged') && localStorage.getItem('submerged') !== 'true') {
     animate.value = true;
     localStorage.setItem('submerged', 'true');

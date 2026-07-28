@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import Navbar from './components/Navbar.vue';
 
@@ -20,12 +20,15 @@ const showNavbar = computed(() => {
 
 const animate = ref(false);
 
-onMounted(() => {
-  console.log(localStorage.getItem('submerged'));
-  if(!localStorage.getItem('submerged') && localStorage.getItem('submerged') !== 'true') {
-    animate.value = true;
-  }
-});
+watch(
+  () => route.path,
+  (newPath) => {
+    if (newPath === '/home') {
+      animate.value = localStorage.getItem('submerged') !== 'true'
+    }
+  },
+  { immediate: true }
+)
 </script>
 
 <style scoped>
