@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar v-if="showNavbar" class="navbar no-select px-3" :class="{ 'navbar-dissolve-in': (route.path === '/home' && animate) }" />
+    <Navbar v-if="showNavbar" @animationend="animate = false" class="navbar no-select px-3" :class="{ 'navbar-dissolve-in': (route.path === '/home' && animate) }" />
     <router-view />
   </div>
 </template>
