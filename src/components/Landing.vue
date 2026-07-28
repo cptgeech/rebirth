@@ -2,7 +2,7 @@
   <v-container class="video-wrapper">
     <video
       ref="video"
-      src="../assets/final.mp4"
+      src="/fade_out.mp4"
       class="fullscreen"
       muted
       autoplay

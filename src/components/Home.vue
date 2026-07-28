@@ -11,7 +11,7 @@
           playsinline
           disablePictureInPicture
         >
-          <source src="/site_vid.mp4" type="video/mp4" />
+          <source src="/site.mp4" type="video/mp4" />
         </video>
 
         <div class="video-overlay"></div>
