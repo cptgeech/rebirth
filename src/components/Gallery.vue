@@ -78,7 +78,6 @@ const scrollCarousel = (carousel, direction) => {
 const checkScroll = (carousel) => {
   carousel.showLeft = carousel.element.scrollLeft > 0;
   carousel.showRight = carousel.element.scrollLeft + carousel.element.clientWidth < carousel.element.scrollWidth;
-  console.log(carousel.showLeft);
 };
 
 const carousels = ref([
