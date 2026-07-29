@@ -2,7 +2,7 @@
   <div class="page">
     <div class="main-wrapper">
       <div v-for="carousel in carousels" class="card px-3">
-        <p>{{ carousel.artist }}</p>
+        <p class="artist">{{ carousel.artist }}</p>
         <div class="carousel-wrapper mt-5">
           <Transition name="fade">
             <v-btn theme="dark" v-show="carousel.showLeft" @click="scrollCarousel(carousel.element, -1)" class="carousel-button left-button" icon><v-icon style="color:rgba(255, 255, 255, 0.7)">mdi-chevron-left</v-icon></v-btn>
@@ -225,6 +225,10 @@ onUnmounted(() => {
 .carousel-wrapper {
   position: relative;
   height: 300px;
+}
+
+.artist {
+  color: rgba(255, 255, 255, 0.8)
 }
 
 .carousel {
