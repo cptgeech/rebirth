@@ -133,7 +133,6 @@ onMounted(() => {
   background-repeat: no-repeat;
   background-attachment: fixed;
 
-  /* Horizontal, vertical */
   background-position: center 400px;
 
   z-index: 0;
@@ -167,9 +166,9 @@ onMounted(() => {
 }
 
 .no-select {
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 @keyframes dissolveIn {

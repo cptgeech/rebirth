@@ -7,7 +7,7 @@
       <div class="center-menu" style="font-family:'Fraktion', sans-serif;">
         <p class="link no-select" @click="router.push('/home')">home</p>
         <p class="link no-select" @click="router.push('/gallery')">gallery</p>
-        <p class="link no-select">events</p>
+        <p class="link no-select" @click="router.push('/events')">events</p>
         <p class="link no-select" @click="router.push('/our-team')">our team</p>
       </div>
       <v-img @click="resurface()" class="exit-logo no-select" src="/new_white_exit.png"></v-img>
@@ -83,8 +83,8 @@ const resurface = () => {
 }
 
 .no-select {
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 </style>

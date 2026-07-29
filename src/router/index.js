@@ -3,6 +3,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Landing from '../components/Landing.vue'
 import Home from '../components/Home.vue'
 import Gallery from '../components/Gallery.vue'
+import Events from '../components/Events.vue'
 import OurTeam from '../components/OurTeam.vue'
 
 const routes = [
@@ -20,6 +21,11 @@ const routes = [
     path: '/gallery',
     name: 'Gallery',
     component: Gallery,
+  },
+  {
+    path: '/events',
+    name: 'Events',
+    component: Events,
   },
   {
     path: '/our-team',
