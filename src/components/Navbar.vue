@@ -11,6 +11,23 @@
         <p class="link no-select">our team</p>
       </div>
       <v-img @click="resurface()" class="exit-logo no-select" src="/new_white_exit.png"></v-img>
+      <!--<v-navigation-drawer color="black" location="right" temporary v-model="drawer">
+        <v-list density="compact" nav>
+          <v-list-item @click="router.push('/home')"><v-list-item-title style="font-family: 'Fraktion', sans-serif;">home</v-list-item-title></v-list-item>
+          <v-list-item @click="router.push('/gallery')"><v-list-item-title style="font-family: 'Fraktion', sans-serif;">gallery</v-list-item-title></v-list-item>
+          <v-list-item><v-list-item-title style="font-family: 'Fraktion', sans-serif;">events</v-list-item-title></v-list-item>
+          <v-list-item><v-list-item-title style="font-family: 'Fraktion', sans-serif;">our team</v-list-item-title></v-list-item>
+        </v-list>
+      </v-navigation-drawer>
+      <div class="d-flex justify-center align-center h-100">
+        <v-btn
+          color="primary"
+          @click.stop="drawer = !drawer"
+          @click:outside="drawer = false"
+        >
+          Toggle
+        </v-btn>
+      </div>-->
     </div>
     <v-divider></v-divider>
   </div>
@@ -20,6 +37,7 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 const router = useRouter();
+const drawer = ref(null)
 const resurface = () => {
   localStorage.removeItem('submerged');
   router.push('/');
