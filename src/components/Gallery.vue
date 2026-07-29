@@ -5,7 +5,7 @@
         <p>{{ carousel.artist }}</p>
         <div class="carousel-wrapper mt-5">
           <Transition name="fade">
-            <v-btn v-show="carousel.showLeft" @click="scrollCarousel(carousel.element, -1)" class="carousel-button left-button" icon><v-icon>mdi-chevron-left</v-icon></v-btn>
+            <v-btn theme="dark" v-show="carousel.showLeft" @click="scrollCarousel(carousel.element, -1)" class="carousel-button left-button" icon><v-icon style="color:rgba(255, 255, 255, 0.7)">mdi-chevron-left</v-icon></v-btn>
           </Transition>
           <div :ref="el => carousel.element = el" class="carousel ga-3" @scroll="checkScroll(carousel)">
             <div v-for="poster in carousel.posters" :key="poster">
@@ -24,7 +24,7 @@
             </div>
           </div>
           <Transition name="fade">
-            <v-btn v-show="carousel.showRight" @click="scrollCarousel(carousel.element, 1)" class="carousel-button right-button" icon><v-icon>mdi-chevron-right</v-icon></v-btn>
+            <v-btn theme="dark" v-show="carousel.showRight" @click="scrollCarousel(carousel.element, 1)" class="carousel-button right-button" icon><v-icon style="color:rgba(255, 255, 255, 0.7)">mdi-chevron-right</v-icon></v-btn>
           </Transition>
         </div>
         <div class="pb-5 pt-8">

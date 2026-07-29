@@ -14,7 +14,7 @@
   <v-img width="100" class="rebirth-logo" :class="{ logodissolve: isDissolving }" src="/rebirthlogo.png"></v-img>
   <div v-if="showTitle" @click="enter" @animationend="showTitle = false" class="centered" :class="{ dissolve: isDissolving }">
     <p style="font-family:'Neuropolitical', sans-serif;color:rgba(255, 255, 255, 0.9);font-size:30px;" class="title w-full">take the plunge,,</p>
-    <p class="pt-2" style="font-family:'Fraktion', sans-serif;">there is no second crossing,,</p>
+    <p class="pt-2" style="font-family:'Fraktion', sans-serif;color:rgba(255, 255, 255, 0.7)">there is no second crossing,,</p>
   </div>
 </template>
 
