@@ -8,7 +8,7 @@
         <p class="link no-select" @click="router.push('/home')">home</p>
         <p class="link no-select" @click="router.push('/gallery')">gallery</p>
         <p class="link no-select">events</p>
-        <p class="link no-select">our team</p>
+        <p class="link no-select" @click="router.push('/our-team')">our team</p>
       </div>
       <v-img @click="resurface()" class="exit-logo no-select" src="/new_white_exit.png"></v-img>
       <!--<v-navigation-drawer color="black" location="right" temporary v-model="drawer">

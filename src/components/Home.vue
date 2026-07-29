@@ -11,7 +11,7 @@
           playsinline
           disablePictureInPicture
         >
-          <source src="https://cdn.discordapp.com/attachments/792812322144911370/1531750357238284519/site.mp4?ex=6a6a592f&is=6a6907af&hm=5c47a6c87a3f824012de38c8b891d56cd5af9cc7a39d826861292da2517e8945&" type="video/mp4" />
+          <source src="https://file.garden/amoCY1tpJgzbXnOF/%5Bre%5Dbirth%20site/site.mp4" type="video/mp4" />
         </video>
 
         <div class="video-overlay"></div>
