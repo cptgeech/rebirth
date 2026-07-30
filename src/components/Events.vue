@@ -8,7 +8,7 @@
       <div v-else-if="event">
         <div class="recent-event pt-5">
           <div class="text-center">
-            <img class="recent-event-poster" :src="event.poster.replace('https://vrc.tl', '/vrc-images')">
+            <img class="recent-event-poster" src="https://api.clubrebirth.net/event-poster.jpg">
           </div>
           <div class="d-flex flex-column justify-center">
             <p class="pb-2" style="font-size:25px;">{{ event.name }}</p>
@@ -35,25 +35,9 @@ const performers = ref([]);
 
 onMounted(() => {
   loading.value = true;
-  axios.get('/vrc-api/api/v1/organizer/864/events?page=1', {
-    headers: {
-      "User-Agent": 'rebirth-bot'
-    },
-  }).then((res) => {
+  axios.get('https://api.clubrebirth.net/event.json').then((res) => {
     loading.value = false;
-    const firstEvent = res.data.data.events[0];
-    const slots = firstEvent.eventSlots.filter(
-      slot => typeof slot.id === 'number'
-    );
-
-    event.value = {
-      ...firstEvent,
-      performers: res.data.data.performers.slice(0, slots.length).map((dj, i) => ({
-        ...dj,
-        start: slots[i].start
-      }))
-    };
-    console.log(event.value);
+    event.value = res.data;
   });
 })
 

@@ -11,18 +11,4 @@ export default defineConfig(({ command }) => ({
   ],
 
   base: '/',
-  server: {
-    proxy: {
-      '/vrc-api': {
-        target: 'https://vrc.tl',
-        changeOrigin: true,
-        rewrite: path => path.replace(/^\/vrc-api/, ''),
-      },
-      '/vrc-images': {
-        target: 'https://vrc.tl',
-        changeOrigin: true,
-        rewrite: path => path.replace(/^\/vrc-images/, ''),
-      },
-    },
-  },
 }))
