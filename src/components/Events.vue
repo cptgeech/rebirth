@@ -10,10 +10,15 @@
           <div class="text-center">
             <img class="recent-event-poster" src="https://api.clubrebirth.net/event-poster.jpg">
           </div>
-          <div class="d-flex flex-column justify-center">
+          <div class="event-info">
             <p class="pb-2" style="font-size:25px;">{{ event.name }}</p>
-            <p style="font-size:20px;" class="pb-5">{{ new Date(event.start * 1000).toLocaleDateString() }}</p>
-            <p v-for="dj in event.performers" :key="dj.id">{{ dj.name }} - {{ new Date(dj.start * 1000).toLocaleTimeString()  }}</p>
+            <p style="font-size:20px;" class="pb-1">{{ new Date(event.start * 1000).toLocaleDateString() }}</p>
+            <p v-if="event.description" class="pb-5" style="font-size:15px;color:rgba(255, 255, 255, 0.5);">{{ event.description }}</p>
+            <div class="performer-wrapper">
+              <div>
+                <p v-for="dj in event.performers" :key="dj.id">{{ dj.name }} <span style="color:rgba(255, 255, 255, 0.5);">- {{ new Date(dj.start * 1000).toLocaleTimeString()  }}</span></p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="py-5">
@@ -62,6 +67,12 @@ onMounted(() => {
 .recent-event {
   display:flex;
   gap: 70px;
+  justify-content: center;
+}
+
+.event-info {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -146,6 +157,16 @@ onMounted(() => {
     flex-direction:column;
     align-items:center;
     gap:10px;
+  }
+
+  .event-info {
+    align-items: center;
+  }
+
+  .performer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 </style>

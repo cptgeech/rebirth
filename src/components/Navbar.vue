@@ -61,6 +61,7 @@ const resurface = () => {
   height:50px;
   flex: 0 0 50px;
   cursor: pointer;
+  opacity: 0.8;
 }
 
 .center-menu {
