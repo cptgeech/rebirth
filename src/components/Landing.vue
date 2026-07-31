@@ -3,7 +3,7 @@
     <!-- need video hosting service that isnt discord, one that supports files above 100mb -->
     <video
       ref="video"
-      src="https://cdn.discordapp.com/attachments/792812322144911370/1531749934477606912/final.mp4?ex=6a6a58ca&is=6a69074a&hm=5fc54cf6aa894872ee2a3105b4f7aad2310ef8d675ea55b66bbb9602b7ea3fa6&"
+      src="https://file.garden/amoCY1tpJgzbXnOF/%5Bre%5Dbirth%20site/compressed%20landing.mp4"
       class="fullscreen"
       muted
       autoplay
